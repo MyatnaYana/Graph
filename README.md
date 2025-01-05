@@ -1,4 +1,4 @@
-Можно работать с graphviz напрямую создавая .dot файл
+***Можно работать с graphviz напрямую создавая .dot файл***
 
 dot -Tpng filename.dot -o graph.png
 
