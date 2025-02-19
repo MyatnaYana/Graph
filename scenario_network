@@ -1,0 +1,44 @@
+// Сценарная сеть
+digraph {
+	start [label="Просыпаешься, ожидаешь звонка"]
+	cafe [label="Находишь бумажник в кафе"]
+	leave_wallet [label="Оставить бумажник"]
+	return_wallet [label="Передать кассиру"]
+	work [label="Приходишь на работу"]
+	help_dmitry [label="Помочь Дмитрию"]
+	decline_dmitry [label="Отказать Дмитрию"]
+	boss_call [label="Начальство вызывает"]
+	explain_boss [label="Объяснить ситуацию"]
+	accept_criticism [label="Молча принять критику"]
+	no_bonus [label="Лишение премии"]
+	keep_working [label="Продолжать работать"]
+	doubt_yourself [label="Начать сомневаться в себе"]
+	colleague_criticized [label="Коллега несправедливо критикует другого"]
+	defend_colleague [label="Вмешаться"]
+	ignore_colleague [label="Пройти мимо"]
+	colleagues_attack [label="Коллеги начинают критиковать тебя"]
+	argue_back [label="Доказывать свою правоту"]
+	smooth_conflict [label="Сгладить ситуацию"]
+	walk_away [label="Уйти от конфликта"]
+	start -> cafe
+	cafe -> leave_wallet
+	cafe -> return_wallet
+	leave_wallet -> work
+	return_wallet -> work
+	work -> help_dmitry
+	work -> decline_dmitry
+	help_dmitry -> boss_call
+	boss_call -> explain_boss
+	boss_call -> accept_criticism
+	explain_boss -> no_bonus
+	accept_criticism -> no_bonus
+	no_bonus -> keep_working
+	no_bonus -> doubt_yourself
+	work -> colleague_criticized
+	colleague_criticized -> defend_colleague
+	colleague_criticized -> ignore_colleague
+	defend_colleague -> colleagues_attack
+	colleagues_attack -> argue_back
+	colleagues_attack -> smooth_conflict
+	colleagues_attack -> walk_away
+}
