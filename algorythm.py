@@ -1,5 +1,4 @@
 import pandas as pd
-import random
 
 class Agent:
     def __init__(self, optimism, pessimism, aggressiveness, fearfulness, indifference):
@@ -30,13 +29,14 @@ class Agent:
         return best_node
 
 # Загружаем CSV-файл
-df = pd.read_csv("orig_scenario_network.csv")
+df = pd.read_csv("scenario_network.csv")
 
 # Создаем агента (пример: Оптимистичный, но слегка пугливый)
 agent = Agent(optimism=0.7, pessimism=0.1, aggressiveness=0.1, fearfulness=0.3, indifference=0.2)
 
 # Запускаем агента из узла 1
 current_node = 1
-while current_node is not None:
+while current_node != 0:
     print(f"Агент находится в узле {current_node}: {df[df['NodeID'] == current_node]['NodeDescription'].values[0]}")
     current_node = agent.choose_next_node(current_node, df)
+print(f"Сценарий завершен.")
